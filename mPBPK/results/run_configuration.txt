@@ -1,0 +1,52 @@
+======================================================================
+D-PINN mPBPK Run Configuration Report
+======================================================================
+
+SAMPLING PARAMETERS
+----------------------------------------------------------------------
+N (MC samples per evaluation):      100
+Ntime (collocation points):          50
+exp_factor (time grid density):      1.0
+
+FIXED PARAMETERS
+----------------------------------------------------------------------
+Observation error (sigma_error):     0.100000 (10% CV)
+
+LOSS WEIGHTS
+----------------------------------------------------------------------
+ODE loss weights:                    [1, 1, 1, 1, 1]
+Data loss weights:                   [1, 1]
+IC loss weights:                     [1, 1, 1, 1, 1]
+Total loss terms:                    12
+
+NEURAL NETWORK ARCHITECTURE
+----------------------------------------------------------------------
+Activation function:                 tanh
+OPTIMIZER CONFIGURATION
+----------------------------------------------------------------------
+Optimizer:                           Adam
+Initial learning rate:               0.0005
+Decay steps:                         1000
+Decay rate:                          0.99
+Total iterations:                    70000
+
+ESTIMATED PARAMETERS (Normal Scale)
+----------------------------------------------------------------------
+σ1 (tight tissues):                  0.834540
+σ2 (leaky tissues):                  0.773958
+Constraint σ1 > σ2:                  PASS ✓
+
+CLp median [L/h]:                    0.011863
+CLp mean [L/h]:                      0.012499
+CLp std dev [L/h]:                   0.004147
+CLp CV [%]:                          33.18
+
+ρ(C, CLp) correlation:               -0.998175
+
+PHYSIOLOGICAL INTERPRETATION
+----------------------------------------------------------------------
+(1 - σ1):                            0.165460 (16.55% plasma→tight)
+(1 - σ2):                            0.226042 (22.60% plasma→leaky)
+Estimated t½ (Vp=3.0L):            175.25 hours (7.30 days)
+
+======================================================================
